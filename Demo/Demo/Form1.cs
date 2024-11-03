@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public partial class Form1 : Form
+    public partial class FormUno : System.Windows.Forms.Form
     {
-        public Form1()
+        public FormUno()
         {
             InitializeComponent();
         }
@@ -62,6 +62,11 @@ namespace Demo
             label2.Visible = true;
 
             label3.Visible = true;
+
+        }
+
+        private void FormUno_Load(object sender, EventArgs e)
+        {
 
         }
     }
