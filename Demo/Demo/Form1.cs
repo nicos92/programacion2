@@ -67,7 +67,70 @@ namespace Demo
 
         private void FormUno_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("bienvenido a la aplicacion");
         }
+
+        private void FormUno_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void FormUno_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.BackColor = Color.White;
+        }
+
+        private void FormUno_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("gracias por usar nuestra aplicacion");
+        }
+
+        private void FormUno_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("que tengas buen dia");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // no muestra cual es la ventana principal. cuando se cierra la venta principal se cierran los demas formularios
+
+            FormUno form1 = new FormUno();
+            form1.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            FormUno formDialog = new FormUno();
+            formDialog.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form frmInicio = new Form();
+            frmInicio.Name = "frmInicio";
+            frmInicio.Text = "Formulario de envio";
+            frmInicio.StartPosition = FormStartPosition.CenterScreen;
+            frmInicio.FormBorderStyle = FormBorderStyle.Fixed3D;
+            frmInicio.BackColor = SystemColors.InactiveCaption;
+            frmInicio.MaximizeBox = false;
+            frmInicio.MinimizeBox = true;
+            frmInicio.ControlBox = true;
+            frmInicio.Font = new Font("Trebuchet MS", 14.75F, FontStyle.Bold);
+            frmInicio.ShowIcon = false;
+            frmInicio.ShowDialog();
+        }
+        private void FrmEjemplo_MouseMove(object sender, MouseEventArgs e)
+        {
+            Random generador = new Random();
+            int r = generador.Next(0, 256);
+            int g = generador.Next(0, 256);
+            int b = generador.Next(0, 256);
+            this.BackColor = Color.FromArgb(r, g, b);
+        }
     }
 }
