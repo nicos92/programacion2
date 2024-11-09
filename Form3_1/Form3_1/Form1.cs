@@ -16,5 +16,10 @@ namespace Form3_1
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

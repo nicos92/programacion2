@@ -1,4 +1,4 @@
 naranja eb5c12
-negro 221c1d
-blanco f7efe9
+negro 221c1d     34; 28; 29
+blanco f7efe9      247; 239; 233
 verde 3f6345
