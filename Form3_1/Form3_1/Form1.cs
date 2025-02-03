@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using NSMessageBox;
 
 namespace Form3_1
 {
     public partial class Form1 : Form
     {
-        private NSMessageBox.NSMessageBox msjBox;
+        private NSMessageBox msjBox;
         public Form1()
         {
             InitializeComponent();
@@ -71,8 +71,8 @@ namespace Form3_1
             ListTipoCambio.Clear();
             MontoIngresado = Convert.ToInt64(TbMontoIngresado.Text);
             ValorProducto = Convert.ToInt64(TbValorProducto.Text.Split(',')[0]);
-            msjBox = new NSMessageBox.NSMessageBox();
-            msjBox.ShowDialog("Cuenta", "valor producto: " + ValorProducto + "\n monto ingresado: " + MontoIngresado, NSMessageBox.Iconos.Info,NSMessageBox.Botones.Aceptar);
+            msjBox = new NSMessageBox();
+            msjBox.ShowDialog("Cuenta", "valor producto: " + ValorProducto + "\n monto ingresado: " + MontoIngresado, Iconos.Info,Botones.Aceptar);
             resto = MontoIngresado - ValorProducto;
            
 
@@ -133,14 +133,24 @@ namespace Form3_1
 
         private void TbMontoIngresado_KeyUp(object sender, KeyEventArgs e)
         {
-            HabilitarCalcular();
+            //HabilitarCalcular();
 
         }
 
         private void TbValorProducto_KeyUp(object sender, KeyEventArgs e)
         {
-            HabilitarCalcular();
+            //HabilitarCalcular();
 
+        }
+
+        private void TbMontoIngresado__TextChanged(object sender, EventArgs e)
+        {
+            HabilitarCalcular();
+        }
+
+        private void TbValorProducto__TextChanged(object sender, EventArgs e)
+        {
+            HabilitarCalcular();
         }
     }
 }
