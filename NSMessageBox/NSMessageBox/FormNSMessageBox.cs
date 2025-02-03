@@ -39,7 +39,9 @@ namespace NSMessageBox
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Yes;
-            this.Close();
+            //this.Close();
+            var nuevo = new NSMessageBox();
+            nuevo.ShowDialog("titulo", "mensaje", Iconos.Cross, Botones.Aceptar);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -55,9 +57,29 @@ namespace NSMessageBox
         {
             this.Text = TituloBarra;
             LblMessage.Text = Mensaje;
-            LblImage.ImageIndex = Convert.ToInt32(Icon);
+            int miIcono = Convert.ToInt32(Icon);
+            LblImage.ImageIndex = miIcono;
+            Icon sIcon = GetMiIcon(miIcono);
+            //this.Icon = new Icon(GetType(), $"NSMessageBox.Resources.{sIcon}.ico");
+            this.Icon = sIcon;
+
             MostrarBotones(Convert.ToInt32(Boton));
             return this.ShowDialog();
+        }
+
+        private Icon GetMiIcon(int icon)
+        {
+            
+                if (icon == 0)
+                {
+                    return Properties.Resources.cross;
+                }
+                if (icon == 4)
+                {
+                    return Properties.Resources.check; 
+                }
+                return Properties.Resources.check;
+        }
         }
     }
 
@@ -67,4 +89,4 @@ namespace NSMessageBox
 
  
 
-}
+
