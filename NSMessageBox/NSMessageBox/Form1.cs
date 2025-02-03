@@ -12,20 +12,13 @@ namespace NSMessageBox
 {
     public partial class NSMessageBox : Form
     {
-        
-        //public NSMessageBox(string TituloBarra, string Mensaje, Iconos Icon, Botones Boton)
-        //{
-        //    InitializeComponent();
-        //    this.Text = TituloBarra;
-        //    LblMessage.Text = Mensaje;
-        //    LblImage.ImageIndex = Convert.ToInt32(Icon);
-        //    MostrarBotones(Convert.ToInt32(Boton));
-        //}
+       
 
 
         public NSMessageBox()
         {
             InitializeComponent();
+
             
         }
 
@@ -68,9 +61,9 @@ namespace NSMessageBox
         }
     }
 
-    public enum Iconos { Cross = 0, Info = 1, Question = 2, Warning = 3, Check = 4 }
+   
 
-    public enum Botones { Aceptar = 0, AceptarCancelar = 1}
+   
 
  
 

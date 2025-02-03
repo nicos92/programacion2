@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Form3_1
 {
     public partial class Form1 : Form
@@ -71,9 +72,9 @@ namespace Form3_1
             MontoIngresado = Convert.ToInt64(TbMontoIngresado.Text);
             ValorProducto = Convert.ToInt64(TbValorProducto.Text.Split(',')[0]);
             msjBox = new NSMessageBox.NSMessageBox();
-            msjBox.ShowDialog("Cuenta", "valor producto: " + ValorProducto + "\n monto ingresado: " + MontoIngresado, NSMessageBox.Iconos.Info,NSMessageBox.Botones.AceptarCancelar);
+            msjBox.ShowDialog("Cuenta", "valor producto: " + ValorProducto + "\n monto ingresado: " + MontoIngresado, NSMessageBox.Iconos.Info,NSMessageBox.Botones.Aceptar);
             resto = MontoIngresado - ValorProducto;
-
+           
 
             AgregarItemLista(resto);
             AgregarItemCambio();
