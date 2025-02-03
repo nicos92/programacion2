@@ -30,16 +30,16 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.LvListaCambio = new System.Windows.Forms.ListView();
+            this.Billete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.TbMontoIngresado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TbValorProducto = new System.Windows.Forms.TextBox();
             this.BtnCalcularVuelto = new System.Windows.Forms.Button();
-            this.LvListaCambio = new System.Windows.Forms.ListView();
-            this.Billete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -74,6 +74,37 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(618, 239);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // LvListaCambio
+            // 
+            this.LvListaCambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
+            this.LvListaCambio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LvListaCambio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Billete,
+            this.Valor,
+            this.Cantidad});
+            this.LvListaCambio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LvListaCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
+            this.LvListaCambio.Location = new System.Drawing.Point(64, 26);
+            this.LvListaCambio.Name = "LvListaCambio";
+            this.LvListaCambio.Size = new System.Drawing.Size(488, 185);
+            this.LvListaCambio.TabIndex = 0;
+            this.LvListaCambio.UseCompatibleStateImageBehavior = false;
+            // 
+            // Billete
+            // 
+            this.Billete.Text = "Billete/Moneda";
+            this.Billete.Width = 180;
+            // 
+            // Valor
+            // 
+            this.Valor.Text = "Valor";
+            this.Valor.Width = 120;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.Text = "Cantidad";
+            this.Cantidad.Width = 120;
             // 
             // tableLayoutPanel1
             // 
@@ -121,6 +152,7 @@
             this.TbMontoIngresado.Size = new System.Drawing.Size(251, 16);
             this.TbMontoIngresado.TabIndex = 2;
             this.TbMontoIngresado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbMontoIngresado_KeyPress);
+            this.TbMontoIngresado.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbMontoIngresado_KeyUp);
             // 
             // label2
             // 
@@ -144,12 +176,14 @@
             this.TbValorProducto.Size = new System.Drawing.Size(251, 16);
             this.TbValorProducto.TabIndex = 3;
             this.TbValorProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbValorProducto_KeyPress);
+            this.TbValorProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbValorProducto_KeyUp);
             // 
             // BtnCalcularVuelto
             // 
             this.BtnCalcularVuelto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(92)))), ((int)(((byte)(18)))));
             this.BtnCalcularVuelto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCalcularVuelto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCalcularVuelto.Enabled = false;
             this.BtnCalcularVuelto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(56)))), ((int)(((byte)(33)))));
             this.BtnCalcularVuelto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(111)))), ((int)(((byte)(80)))));
             this.BtnCalcularVuelto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(56)))), ((int)(((byte)(33)))));
@@ -161,37 +195,6 @@
             this.BtnCalcularVuelto.Text = "Calcular Vuelto";
             this.BtnCalcularVuelto.UseVisualStyleBackColor = false;
             this.BtnCalcularVuelto.Click += new System.EventHandler(this.BtnCalcularVuelto_Click);
-            // 
-            // LvListaCambio
-            // 
-            this.LvListaCambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.LvListaCambio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LvListaCambio.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Billete,
-            this.Valor,
-            this.Cantidad});
-            this.LvListaCambio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LvListaCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(239)))), ((int)(((byte)(233)))));
-            this.LvListaCambio.Location = new System.Drawing.Point(64, 26);
-            this.LvListaCambio.Name = "LvListaCambio";
-            this.LvListaCambio.Size = new System.Drawing.Size(488, 185);
-            this.LvListaCambio.TabIndex = 0;
-            this.LvListaCambio.UseCompatibleStateImageBehavior = false;
-            // 
-            // Billete
-            // 
-            this.Billete.Text = "Billete/Moneda";
-            this.Billete.Width = 180;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.Text = "Cantidad";
-            this.Cantidad.Width = 120;
-            // 
-            // Valor
-            // 
-            this.Valor.Text = "Valor";
-            this.Valor.Width = 120;
             // 
             // Form1
             // 

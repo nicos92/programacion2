@@ -12,29 +12,47 @@ namespace Form3_1
 {
     public partial class Form1 : Form
     {
+        private NSMessageBox.NSMessageBox msjBox;
         public Form1()
         {
             InitializeComponent();
         }
 
-        int[] ArrValor = { 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 };
+        long MontoIngresado;
+        long ValorProducto;
+        long resto;
+
+        int[] ArrValor = { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1 };
 
         private List<TipoCambio> ListTipoCambio = new List<TipoCambio>();
 
         private void TbMontoIngresado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            IngresoDigito(e);
+            IngresoDigitoEntero(e);
         }
 
         private void TbValorProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            IngresoDigito(e);
+            IngresoDigitoDecimal(e);
+
 
         }
 
-        private void IngresoDigito(KeyPressEventArgs e)
+        private void IngresoDigitoEntero(KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+        }
+        private void IngresoDigitoDecimal(KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == 8 || e.KeyChar == 46 || e.KeyChar == 44) 
             {
                 e.Handled = false;
             }
@@ -45,48 +63,50 @@ namespace Form3_1
 
         }
 
+
+
         private void BtnCalcularVuelto_Click(object sender, EventArgs e)
         {
             ListTipoCambio.Clear();
-            int MontoIngresado = Convert.ToInt32(TbMontoIngresado.Text);
-            int ValorProducto = Convert.ToInt32(TbValorProducto.Text);
-            int resto = MontoIngresado - ValorProducto;
-            Console.WriteLine("Resto: {0}", resto);
+            MontoIngresado = Convert.ToInt64(TbMontoIngresado.Text);
+            ValorProducto = Convert.ToInt64(TbValorProducto.Text.Split(',')[0]);
+            msjBox = new NSMessageBox.NSMessageBox();
+            msjBox.ShowDialog("Cuenta", "valor producto: " + ValorProducto + "\n monto ingresado: " + MontoIngresado, NSMessageBox.Iconos.Info,NSMessageBox.Botones.AceptarCancelar);
+            resto = MontoIngresado - ValorProducto;
+
+
+            AgregarItemLista(resto);
+            AgregarItemCambio();
+            
+
+
+
+        }
+
+        private void AgregarItemLista(long resto)
+        {
             for (int i = 0; i < ArrValor.Length; i++)
             {
 
-                int resultado = resto / ArrValor[i];
-                Console.WriteLine("resultado: {0}", resultado);
+                decimal resultado = resto / ArrValor[i];
                 if (resultado > 0)
                 {
                     resto = resto % ArrValor[i];
                     TipoCambio tc = new TipoCambio();
-                    tc.Tipo = ArrValor[i] > 10 ? "Billete" : "Moneda";
+                    tc.Tipo = ArrValor[i] > 10 ? "Billete de " : "Moneda de";
                     tc.Valor = ArrValor[i].ToString();
                     tc.Cantidad = resultado.ToString();
                     ListTipoCambio.Add(tc);
 
                 }
             }
-
-            AgregarItemCambio();
-
-
         }
 
         private void AgregarItemCambio()
         {
             LvListaCambio.Items.Clear();
-            // Configurar el ListView
             LvListaCambio.View = View.Details; // Establecer la vista a Detalles
-            //LvListaCambio.FullRowSelect = true; // Seleccionar toda la fila
-            //LvListaCambio.GridLines = false; // Mostrar líneas de la cuadrícula (opcional)
-            /*TipoCambio tipoCambio = new TipoCambio()
-            {
-                Tipo = "Billetin",
-                Valor = "200",
-                Cantidad = "3"
-            };*/
+
 
             foreach (var item in ListTipoCambio)
             {
@@ -99,6 +119,27 @@ namespace Form3_1
 
                 LvListaCambio.Items.Add(lvi);
             }
+        }
+
+        private void HabilitarCalcular()
+        {
+            if (TbValorProducto.Text.Length > 0 && TbMontoIngresado.Text.Length > 0)
+            {
+
+                BtnCalcularVuelto.Enabled = Convert.ToDecimal(TbMontoIngresado.Text) >= Convert.ToDecimal(TbValorProducto.Text);
+            }
+        }
+
+        private void TbMontoIngresado_KeyUp(object sender, KeyEventArgs e)
+        {
+            HabilitarCalcular();
+
+        }
+
+        private void TbValorProducto_KeyUp(object sender, KeyEventArgs e)
+        {
+            HabilitarCalcular();
+
         }
     }
 }

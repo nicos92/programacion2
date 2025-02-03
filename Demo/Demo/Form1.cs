@@ -131,6 +131,7 @@ namespace Demo
             int g = generador.Next(0, 256);
             int b = generador.Next(0, 256);
             this.BackColor = Color.FromArgb(r, g, b);
-        }
+        }
+
     }
 }

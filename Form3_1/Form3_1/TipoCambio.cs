@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Form3_1
 {
-    class TipoCambio
+    public class TipoCambio
     {
         public string Tipo { get; set; }
         public string Valor { get; set; }
