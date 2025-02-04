@@ -13,7 +13,7 @@ namespace Form3_1
 {
     public partial class Form1 : Form
     {
-        private NSMessageBox msjBox;
+        private NSMessageBox.NSMessageBox msjBox;
         public Form1()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace Form3_1
             ListTipoCambio.Clear();
             MontoIngresado = Convert.ToInt64(TbMontoIngresado.Text);
             ValorProducto = Convert.ToInt64(TbValorProducto.Text.Split(',')[0]);
-            msjBox = new NSMessageBox();
+            msjBox = new NSMessageBox.NSMessageBox();
             msjBox.ShowDialog("Cuenta", "valor producto: " + ValorProducto + "\n monto ingresado: " + MontoIngresado, Iconos.Info,Botones.Aceptar);
             resto = MontoIngresado - ValorProducto;
            

@@ -16,7 +16,7 @@ namespace NSMessageBox
         public static readonly Color Warning = Color.FromArgb(255, 255, 193, 7);
         public static readonly Color Danger = Color.FromArgb(255, 220, 53, 69);
         public static readonly Color Light = Color.FromArgb(255, 248, 249, 250);
-        public static readonly Color Dark = Color.FromArgb(255, 52, 58, 64);
+        public static readonly Color Dark = Color.FromArgb(255, 43,48,53);
         public static readonly Color White = Color.FromArgb(255, 254, 254, 254);
         public static readonly Color Black = Color.FromArgb(255, 16, 16, 16);
 

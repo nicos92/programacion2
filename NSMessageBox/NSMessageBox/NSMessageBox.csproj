@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A507108E-9EBB-46C6-9412-70116C838113}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NSMessageBox</RootNamespace>
     <AssemblyName>NSMessageBox</AssemblyName>
@@ -90,10 +90,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\check.ico" />
+    <None Include="Resources\check32.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cross.ico" />
+    <None Include="Resources\cross32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
