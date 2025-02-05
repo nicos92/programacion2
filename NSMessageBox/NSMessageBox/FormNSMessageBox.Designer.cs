@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NSMessageBox));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.TableLayoutBtns = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnAceptar = new Controles.NSButton();
+            this.BtnCancelar = new Controles.NSButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.LblMessage = new System.Windows.Forms.Label();
             this.LblImage = new System.Windows.Forms.Label();
             this.Imgs = new System.Windows.Forms.ImageList(this.components);
-            this.BtnAceptar = new Controles.NSButton();
-            this.BtnCancelar = new Controles.NSButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.TableLayoutBtns.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -73,6 +73,48 @@
             this.TableLayoutBtns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutBtns.Size = new System.Drawing.Size(483, 48);
             this.TableLayoutBtns.TabIndex = 0;
+            // 
+            // BtnAceptar
+            // 
+            this.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.BtnAceptar.BackGroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.BtnAceptar.BorderColor = System.Drawing.Color.DarkGreen;
+            this.BtnAceptar.BorderRadius = 18;
+            this.BtnAceptar.BorderSize = 1;
+            this.BtnAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAceptar.FlatAppearance.BorderSize = 0;
+            this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAceptar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAceptar.ForeColor = System.Drawing.Color.White;
+            this.BtnAceptar.Location = new System.Drawing.Point(3, 3);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(155, 42);
+            this.BtnAceptar.TabIndex = 0;
+            this.BtnAceptar.Text = "Aceptar";
+            this.BtnAceptar.TextColor = System.Drawing.Color.White;
+            this.BtnAceptar.UseVisualStyleBackColor = false;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.BtnCancelar.BackGroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.BtnCancelar.BorderColor = System.Drawing.Color.DarkRed;
+            this.BtnCancelar.BorderRadius = 18;
+            this.BtnCancelar.BorderSize = 1;
+            this.BtnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCancelar.FlatAppearance.BorderSize = 0;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.Location = new System.Drawing.Point(325, 3);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(155, 42);
+            this.BtnCancelar.TabIndex = 1;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.TextColor = System.Drawing.Color.White;
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -124,53 +166,11 @@
             this.Imgs.Images.SetKeyName(3, "warning");
             this.Imgs.Images.SetKeyName(4, "check");
             // 
-            // BtnAceptar
-            // 
-            this.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.BtnAceptar.BackGroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.BtnAceptar.BorderColor = System.Drawing.Color.DarkGreen;
-            this.BtnAceptar.BorderRadius = 18;
-            this.BtnAceptar.BorderSize = 1;
-            this.BtnAceptar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnAceptar.FlatAppearance.BorderSize = 0;
-            this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAceptar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAceptar.ForeColor = System.Drawing.Color.White;
-            this.BtnAceptar.Location = new System.Drawing.Point(3, 3);
-            this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(155, 42);
-            this.BtnAceptar.TabIndex = 0;
-            this.BtnAceptar.Text = "Aceptar";
-            this.BtnAceptar.TextColor = System.Drawing.Color.White;
-            this.BtnAceptar.UseVisualStyleBackColor = false;
-            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.BtnCancelar.BackGroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.BtnCancelar.BorderColor = System.Drawing.Color.DarkRed;
-            this.BtnCancelar.BorderRadius = 18;
-            this.BtnCancelar.BorderSize = 1;
-            this.BtnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnCancelar.FlatAppearance.BorderSize = 0;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.Location = new System.Drawing.Point(325, 3);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(155, 42);
-            this.BtnCancelar.TabIndex = 1;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.TextColor = System.Drawing.Color.White;
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
             // NSMessageBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(507, 232);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
