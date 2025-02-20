@@ -33,11 +33,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ListBoxFrases = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.BtnLimpiarTodo = new Controles.NSButton();
             this.TxtFrase = new Controles.NSTextBox();
             this.TxtUltimaPalabra = new Controles.NSTextBox();
@@ -140,6 +140,42 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(366, 425);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(4, 336);
+            this.label6.Margin = new System.Windows.Forms.Padding(4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Termina con la palabra:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(4, 247);
+            this.label5.Margin = new System.Windows.Forms.Padding(4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(191, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Comienza con la palabra:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(4, 158);
+            this.label4.Margin = new System.Windows.Forms.Padding(4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Contiene un total de:";
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -164,42 +200,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Contiene un total de:";
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 158);
-            this.label4.Margin = new System.Windows.Forms.Padding(4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Contiene un total de:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 247);
-            this.label5.Margin = new System.Windows.Forms.Padding(4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Comienza con la palabra:";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 336);
-            this.label6.Margin = new System.Windows.Forms.Padding(4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Termina con la palabra:";
-            // 
             // BtnLimpiarTodo
             // 
             this.BtnLimpiarTodo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -208,6 +208,7 @@
             this.BtnLimpiarTodo.BorderColor = System.Drawing.Color.Pink;
             this.BtnLimpiarTodo.BorderRadius = 15;
             this.BtnLimpiarTodo.BorderSize = 0;
+            this.BtnLimpiarTodo.Enabled = false;
             this.BtnLimpiarTodo.FlatAppearance.BorderSize = 0;
             this.BtnLimpiarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiarTodo.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,13 +221,14 @@
             this.BtnLimpiarTodo.Text = "Limpiar Todo";
             this.BtnLimpiarTodo.TextColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnLimpiarTodo.UseVisualStyleBackColor = false;
+            this.BtnLimpiarTodo.Click += new System.EventHandler(this.BtnLimpiarTodo_Click);
             // 
             // TxtFrase
             // 
             this.TxtFrase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(34)))));
             this.TxtFrase.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.TxtFrase.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.TxtFrase.BorderSize = 2;
+            this.TxtFrase.BorderSize = 3;
             this.TxtFrase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtFrase.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtFrase.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -260,7 +262,7 @@
             this.TxtUltimaPalabra.ReadOnly = true;
             this.TxtUltimaPalabra.Size = new System.Drawing.Size(350, 29);
             this.TxtUltimaPalabra.TabIndex = 7;
-            this.TxtUltimaPalabra.UnderLinesStyle = false;
+            this.TxtUltimaPalabra.UnderLinesStyle = true;
             // 
             // TxtPrimerPalabra
             // 
@@ -280,7 +282,7 @@
             this.TxtPrimerPalabra.ReadOnly = true;
             this.TxtPrimerPalabra.Size = new System.Drawing.Size(350, 29);
             this.TxtPrimerPalabra.TabIndex = 6;
-            this.TxtPrimerPalabra.UnderLinesStyle = false;
+            this.TxtPrimerPalabra.UnderLinesStyle = true;
             // 
             // TxtCantEspacios
             // 
@@ -300,7 +302,7 @@
             this.TxtCantEspacios.ReadOnly = true;
             this.TxtCantEspacios.Size = new System.Drawing.Size(350, 29);
             this.TxtCantEspacios.TabIndex = 5;
-            this.TxtCantEspacios.UnderLinesStyle = false;
+            this.TxtCantEspacios.UnderLinesStyle = true;
             // 
             // TxtCantLetras
             // 
@@ -320,7 +322,7 @@
             this.TxtCantLetras.ReadOnly = true;
             this.TxtCantLetras.Size = new System.Drawing.Size(350, 30);
             this.TxtCantLetras.TabIndex = 4;
-            this.TxtCantLetras.UnderLinesStyle = false;
+            this.TxtCantLetras.UnderLinesStyle = true;
             // 
             // Form1
             // 

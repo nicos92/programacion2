@@ -12,6 +12,9 @@ namespace Guia_5
 {
     public partial class Form1 : Form
     {
+
+        NSMessageBox.NSMessageBox cartel = new NSMessageBox.NSMessageBox();
+
         public Form1()
         {
             InitializeComponent();
@@ -44,12 +47,12 @@ namespace Guia_5
 
         private void ConfirmarAgregarALista()
         {
-            NSMessageBox.NSMessageBox cartel = new NSMessageBox.NSMessageBox();
             DialogResult result = cartel.ShowDialog("Confirmar Ingreso", "¿Estas seguro que quieres ingresar esta frase?", NSMessageBox.Iconos.Question, NSMessageBox.Botones.AceptarCancelar);
 
             if (result == DialogResult.Yes)
             {
                 IngresarALista();
+                BtnLimpiarTodo.Enabled = true;
             }
         }
 
@@ -105,7 +108,27 @@ namespace Guia_5
             TxtCantLetras.Text = frase.Length + " Letras";
         }
 
+        private void BtnLimpiarTodo_Click(object sender, EventArgs e)
+        {
 
+            DialogResult result = cartel.ShowDialog("Confirmar Ingreso", "¿Estas seguro que quieres ingresar esta frase?", NSMessageBox.Iconos.Question, NSMessageBox.Botones.AceptarCancelar);
 
+            if (result == DialogResult.Yes)
+            {
+                LimpiarTodo();
+            }
+        }
+
+        private  void LimpiarTodo()
+        {
+            ListBoxFrases.Items.Clear();
+            BtnLimpiarTodo.Enabled = false;
+            TxtFrase.Focus();
+            TxtCantLetras.Text = string.Empty;
+            TxtCantEspacios.Text = string.Empty;
+            TxtPrimerPalabra.Text = string.Empty;
+            TxtUltimaPalabra.Text = string.Empty;
+
+        }
     }
 }
