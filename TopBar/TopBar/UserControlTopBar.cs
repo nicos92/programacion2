@@ -93,5 +93,10 @@ namespace TopBar
         {
             //BtnMaximize_Click(sender, e);
         }
+
+        private void UserControlTopBar_Load(object sender, EventArgs e)
+        {
+            LblTituloApp.Text = this.ProductName;
+        }
     }
 }

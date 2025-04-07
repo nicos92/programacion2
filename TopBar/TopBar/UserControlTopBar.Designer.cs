@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             this.Panel = new System.Windows.Forms.Panel();
+            this.LblTituloApp = new System.Windows.Forms.Label();
+            this.LblNicoS92 = new System.Windows.Forms.Label();
+            this.LogoNicos = new System.Windows.Forms.PictureBox();
             this.BtnMinimize = new System.Windows.Forms.Button();
             this.BtnMaximize = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoNicos)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel
             // 
-            this.Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(9)))), ((int)(((byte)(25)))));
+            this.Panel.Controls.Add(this.LblTituloApp);
+            this.Panel.Controls.Add(this.LblNicoS92);
+            this.Panel.Controls.Add(this.LogoNicos);
             this.Panel.Controls.Add(this.BtnMinimize);
             this.Panel.Controls.Add(this.BtnMaximize);
             this.Panel.Controls.Add(this.BtnCerrar);
@@ -51,9 +58,45 @@
             this.Panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
             this.Panel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
             // 
+            // LblTituloApp
+            // 
+            this.LblTituloApp.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblTituloApp.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTituloApp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LblTituloApp.Location = new System.Drawing.Point(140, 0);
+            this.LblTituloApp.Name = "LblTituloApp";
+            this.LblTituloApp.Size = new System.Drawing.Size(136, 40);
+            this.LblTituloApp.TabIndex = 5;
+            this.LblTituloApp.Text = "Nombre de la App";
+            this.LblTituloApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LblNicoS92
+            // 
+            this.LblNicoS92.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblNicoS92.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNicoS92.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LblNicoS92.Location = new System.Drawing.Point(40, 0);
+            this.LblNicoS92.Name = "LblNicoS92";
+            this.LblNicoS92.Size = new System.Drawing.Size(100, 40);
+            this.LblNicoS92.TabIndex = 4;
+            this.LblNicoS92.Text = "NicoS92 App";
+            this.LblNicoS92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LogoNicos
+            // 
+            this.LogoNicos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(9)))), ((int)(((byte)(25)))));
+            this.LogoNicos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LogoNicos.Image = global::TopBar.Properties.Resources.nsx1;
+            this.LogoNicos.Location = new System.Drawing.Point(0, 0);
+            this.LogoNicos.Name = "LogoNicos";
+            this.LogoNicos.Size = new System.Drawing.Size(40, 40);
+            this.LogoNicos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoNicos.TabIndex = 3;
+            this.LogoNicos.TabStop = false;
+            // 
             // BtnMinimize
             // 
-            this.BtnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.BtnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(9)))), ((int)(((byte)(25)))));
             this.BtnMinimize.BackgroundImage = global::TopBar.Properties.Resources.icons8minimize30;
             this.BtnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
@@ -70,7 +113,7 @@
             // 
             // BtnMaximize
             // 
-            this.BtnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.BtnMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(9)))), ((int)(((byte)(25)))));
             this.BtnMaximize.BackgroundImage = global::TopBar.Properties.Resources.icons8restoredown32;
             this.BtnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
@@ -89,7 +132,7 @@
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(37)))), ((int)(((byte)(42)))));
+            this.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(9)))), ((int)(((byte)(25)))));
             this.BtnCerrar.BackgroundImage = global::TopBar.Properties.Resources.icons8close30;
             this.BtnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
@@ -111,7 +154,9 @@
             this.Controls.Add(this.Panel);
             this.Name = "UserControlTopBar";
             this.Size = new System.Drawing.Size(545, 40);
+            this.Load += new System.EventHandler(this.UserControlTopBar_Load);
             this.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoNicos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +167,8 @@
         private System.Windows.Forms.Button BtnCerrar;
         private System.Windows.Forms.Button BtnMaximize;
         private System.Windows.Forms.Button BtnMinimize;
+        private System.Windows.Forms.PictureBox LogoNicos;
+        private System.Windows.Forms.Label LblNicoS92;
+        private System.Windows.Forms.Label LblTituloApp;
     }
 }

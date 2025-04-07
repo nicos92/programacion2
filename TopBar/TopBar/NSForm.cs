@@ -10,23 +10,25 @@ using System.Windows.Forms;
 
 namespace TopBar
 {
-    public partial class Form1 : Form
+    public partial class NSForm : Form
     {
-        private UserControl topbar;
-        private bool isDragging = false;
-        private Point lastCursorPosition;
-        public Form1()
+        public NSForm()
         {
             InitializeComponent();
         }
 
-       
+        private UserControl topbar;
+        private bool isDragging = false;
+        private Point lastCursorPosition;
+        
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             topbar = new UserControlTopBar();
             PanelTop.Controls.Add(topbar);
-            
+
             //topbar.Size = new Size(PanelTop.Width, PanelTop.Height);
             topbar.Dock = DockStyle.Fill;
         }
@@ -36,7 +38,7 @@ namespace TopBar
 
 
             //topbar.Size = new Size(PanelTop.Width, PanelTop.Height);
-            
+
         }
 
         private void PanelTop_MouseDown(object sender, MouseEventArgs e)
@@ -65,6 +67,11 @@ namespace TopBar
             {
                 isDragging = false;
             }
+        }
+
+        private void PanelMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
